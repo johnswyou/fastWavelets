@@ -13,3 +13,5 @@ LinkingTo:
     Rcpp
 Imports: 
     Rcpp
+URL: https://github.com/johnswyou/fastWavelets
+BugReports: https://github.com/johnswyou/fastWavelets/issues
