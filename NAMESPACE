@@ -2,6 +2,7 @@
 
 export(atrous_dwt)
 export(mo_dwt)
+export(n_boundary_coefs)
 export(scaling_coefs)
 export(scaling_filter)
 export(wavelet_coefs)
