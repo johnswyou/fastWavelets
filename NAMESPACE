@@ -3,6 +3,8 @@
 export(atrous_dwt)
 export(mo_dwt)
 export(scaling_coefs)
+export(scaling_filter)
 export(wavelet_coefs)
+export(wavelet_filter)
 importFrom(Rcpp,sourceCpp)
 useDynLib(fastWavelets, .registration = TRUE)
