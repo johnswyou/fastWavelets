@@ -23,7 +23,6 @@
 #' N = 1000 #  number of time series points
 #' J = 4 # decomposition level
 #' wavelet = 'coif1' # wavelet filter
-#' nbc = n_boundary_coefs(wavelet,J) # number of boundary-effected coefficients at decomp_level J
 #' X = matrix(rnorm(N),N,1)
 #' W = atrous_dwt(X,wavelet,J)
 #' Xr = as.matrix(rowSums(W)) # reconstruct time series
