@@ -20,11 +20,6 @@
 #'
 #' @examples
 #' \dontrun{
-#'
-#' source('H:/Rfolder/Functions and Scripts/scaling_filter.R')
-#' source('H:/Rfolder/Functions and Scripts/scaling_coefs.R')
-#' source('H:/Rfolder/Functions and Scripts/n_boundary_coefs.R')
-#' source('H:/Rfolder/Functions and Scripts/atrous_dwt.R')
 #' N = 1000 #  number of time series points
 #' J = 4 # decomposition level
 #' wavelet = 'coif1' # wavelet filter
@@ -35,7 +30,6 @@
 #' mse_r = mean( (X - Xr)^2) # confirm additive reconstruction
 #' plot.ts(W) # plot wavelet and scaling coefficients
 #' }
-
 #' @export
 atrous_dwt <- function(X,wavelet,decomp_level){
 

@@ -14,28 +14,12 @@
 #'
 #' @examples
 #' \dontrun{
-#'
-#' source('H:/Rfolder/Functions and Scripts/scaling_filter.R')
-#' source('H:/Rfolder/Functions and Scripts/scaling_coefs.R')
-#' source('H:/Rfolder/Functions and Scripts/wavelet_coefs.R')
-#' source('H:/Rfolder/Functions and Scripts/wavelet_filter.R')
-#' source('H:/Rfolder/Functions and Scripts/n_boundary_coefs.R')
-#' source('H:/Rfolder/Functions and Scripts/mo_dwt.R')
 #' N = 1000 #  number of time series points
 #' J = 4 # decomposition level
 #' wavelet = 'coif1' # wavelet filter
-#' nbc = n_boundary_coefs(wavelet,J) # number of boundary-effected coefficients at decomp_level J
 #' X = matrix(rnorm(N),N,1)
 #' W = mo_dwt(X,wavelet,J)
 #' }
-
-# This function has been modified from the original to use Rcpp implementations
-# of scaling_coefs() and wavelet_coefs(). You must have the following two lines
-# executed to make mo_dwt() work. Last update: December 09, 2021.
-
-# sourceCpp("./cpp_codes/scaling_coefs.cpp")
-# sourceCpp("./cpp_codes/wavelet_coefs.cpp")
-
 #' @export
 mo_dwt <- function(X,wavelet,decomp_level){
 
