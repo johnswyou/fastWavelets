@@ -5,13 +5,7 @@ using namespace Rcpp;
 
 // -------------- roxygen2 documentation -------------- //
 
-//' Computes scaling coefficients
-//'
-//' @param X A vector
-//' @param wavelet A character string indicating the wavelet filter desired
-//' @param j The decomposition level
-//' @return Matrix of scaling coefficients
-//' @export
+
 
 // ---------------------------------------------------- //
 
@@ -28,6 +22,13 @@ using namespace Rcpp;
 // Main function
 // =============
 
+//' Computes scaling coefficients
+//'
+//' @param X A vector
+//' @param wavelet A character string indicating the wavelet filter desired
+//' @param j The decomposition level
+//' @return Matrix of scaling coefficients
+//' @export
 // [[Rcpp::export]]
 NumericMatrix scaling_coefs(NumericVector X, String wavelet, int j)
 {

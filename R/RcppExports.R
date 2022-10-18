@@ -16,8 +16,6 @@ scaling_filter <- function(wavelet) {
 #' @param j The decomposition level
 #' @return Matrix of scaling coefficients
 #' @export
-NULL
-
 scaling_coefs <- function(X, wavelet, j) {
     .Call(`_fastWavelets_scaling_coefs`, X, wavelet, j)
 }
@@ -29,8 +27,6 @@ scaling_coefs <- function(X, wavelet, j) {
 #' @param j The decomposition level
 #' @return Matrix of wavelet coefficients
 #' @export
-NULL
-
 wavelet_coefs <- function(X, wavelet, j) {
     .Call(`_fastWavelets_wavelet_coefs`, X, wavelet, j)
 }
