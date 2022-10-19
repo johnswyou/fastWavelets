@@ -32,6 +32,8 @@
 #' @export
 atrous_dwt <- function(X,wavelet,decomp_level){
 
+  X <- shape_check(X)
+
   N = length(X)
   # g = scaling_filter(wavelet)
   # L = length(g)
