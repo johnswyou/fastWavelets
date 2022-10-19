@@ -70,6 +70,7 @@ atrous_dwt <- function(X,wavelet,decomp_level){
 
   W = cbind(w[seq(N+1,2*N),], v[seq(N+1,2*N),J])
 
-  atrous_dwt <- W
+  # atrous_dwt <- W
+  return(W)
 
 } # EOF

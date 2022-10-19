@@ -62,6 +62,7 @@ mo_dwt <- function(X,wavelet,decomp_level){
 
   W = cbind(w[seq(N+1,2*N),], v[seq(N+1,2*N),J])
 
-  mo_dwt <- W
+  # mo_dwt <- W
+  return(W)
 
 } # EOF
