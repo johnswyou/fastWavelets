@@ -5,7 +5,6 @@
 #'
 #' @param wavelet A character string indicating the wavelet filter desired
 #' @return Wavelet filter vector
-#' @export
 wavelet_filter <- function(wavelet) {
     .Call(`_fastWavelets_wavelet_filter`, wavelet)
 }
@@ -14,7 +13,6 @@ wavelet_filter <- function(wavelet) {
 #'
 #' @param wavelet A character string indicating the wavelet filter desired
 #' @return Scaling filter vector
-#' @export
 scaling_filter <- function(wavelet) {
     .Call(`_fastWavelets_scaling_filter`, wavelet)
 }
@@ -25,7 +23,6 @@ scaling_filter <- function(wavelet) {
 #' @param wavelet A character string indicating the wavelet filter desired
 #' @param j The decomposition level
 #' @return Matrix of scaling coefficients
-#' @export
 scaling_coefs <- function(X, wavelet, j) {
     .Call(`_fastWavelets_scaling_coefs`, X, wavelet, j)
 }
@@ -36,7 +33,6 @@ scaling_coefs <- function(X, wavelet, j) {
 #' @param wavelet A character string indicating the wavelet filter desired
 #' @param j The decomposition level
 #' @return Matrix of wavelet coefficients
-#' @export
 wavelet_coefs <- function(X, wavelet, j) {
     .Call(`_fastWavelets_wavelet_coefs`, X, wavelet, j)
 }

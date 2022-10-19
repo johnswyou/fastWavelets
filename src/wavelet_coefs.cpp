@@ -3,12 +3,6 @@
 
 using namespace Rcpp;
 
-// -------------- roxygen2 documentation -------------- //
-
-
-
-// ---------------------------------------------------- //
-
 // Use C++ 11
 // ==========
 
@@ -29,7 +23,6 @@ using namespace Rcpp;
 //' @param wavelet A character string indicating the wavelet filter desired
 //' @param j The decomposition level
 //' @return Matrix of wavelet coefficients
-//' @export
 // [[Rcpp::export]]
 NumericMatrix wavelet_coefs(NumericVector X, String wavelet, int j)
 {
@@ -72,4 +65,4 @@ NumericMatrix wavelet_coefs(NumericVector X, String wavelet, int j)
 
     return d;
 
-} // EOF
+}

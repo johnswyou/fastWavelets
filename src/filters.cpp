@@ -11,7 +11,6 @@ using namespace Rcpp;
 //'
 //' @param wavelet A character string indicating the wavelet filter desired
 //' @return Wavelet filter vector
-//' @export
 // [[Rcpp::export]]
 NumericVector wavelet_filter(String wavelet) {
 
@@ -32,7 +31,6 @@ NumericVector wavelet_filter(String wavelet) {
 //'
 //' @param wavelet A character string indicating the wavelet filter desired
 //' @return Scaling filter vector
-//' @export
 // [[Rcpp::export]]
 NumericVector scaling_filter(String wavelet)
 {
