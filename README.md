@@ -42,3 +42,17 @@ c("haar", "d1", "sym1", "bior1.1", "rbio1.1",
 "fk4", "fk6", "fk8", "fk14", "fk18", "fk22",
 "b3spline")
 ```
+
+## References
+
+M. Basta (2014), Additive Decomposition and Boundary Conditions in Wavelet-Based
+Forecasting Approaches, Acta Oeconomica Pragensia, 2, pp. 48-70.
+
+Benaouda, D., F. Murtagh, J. L. Starck, and O. Renaud (2006),
+Wavelet-based nonlinear multiscale decomposition model for
+electricity load forecasting, Neurocomputing,
+doi:10.1016/j.neucom.2006.04.005.
+
+Maheswaran, R., and R. Khosa (2012), Comparative study of different
+wavelets for hydrologic forecasting, Comput. Geosci.,
+doi:10.1016/j.cageo.2011.12.015.
