@@ -27,13 +27,11 @@ The argument \code{wavelet} can take one of the following values:
 \code{c("haar", "d1", "sym1", "d2", "sym2", "d3", "sym3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "d11", "sym4", "sym5", "sym6", "sym7", "sym8", "sym9", "sym10", "coif1", "coif2", "coif3", "coif4", "coif5", "la8", "la10", "la12", "la14", "la16", "la18", "la20", "bl14", "bl18", "bl20", "fk4", "fk6", "fk8", "fk14", "fk18", "fk22", )}
 }
 \examples{
-\dontrun{
 N <- 1000 #  number of time series points
 J <- 4 # decomposition level
 wavelet <- 'coif1' # wavelet filter
 X <- matrix(rnorm(N),N,1)
 W <- mo_dwt(X,wavelet,J)
-}
 }
 \references{
 M. Basta (2014), Additive Decomposition and Boundary Conditions in Wavelet-Based

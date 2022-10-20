@@ -1,13 +1,13 @@
 Package: fastWavelets
-Title: Compute Maximal Overlap Discrete Wavelet Transform (MODWT) and A Trous DWT
+Title: Compute Maximal Overlap Discrete Wavelet Transform (MODWT) and À Trous DWT
 Version: 0.0.0.9000
 Authors@R: c(
-    person("John", "Quilty", , "jquilty@uwaterloo.ca", role = c("aut"), comment = c(ORCID = "0000-0002-0207-8077")),
-    person("John", "You", , "johnswyou@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-3509-0312"))
+    person("John", "You", , "johnswyou@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-3509-0312")),
+    person("John", "Quilty", , "jquilty@uwaterloo.ca", role = c("aut"), comment = c(ORCID = "0000-0002-0207-8077"))
     )
 Description: 
-    This package contains functions that compute Maximal Overlap Discrete Wavelet 
-    Transform (MODWT) and A Trous Discrete Wavelet Transform by leveraging the 
+    Compute Maximal Overlap Discrete Wavelet 
+    Transform (MODWT) and À Trous Discrete Wavelet Transform by leveraging the 
     power of Rcpp to make these operations fast.
 License: MIT + file LICENSE
 Encoding: UTF-8

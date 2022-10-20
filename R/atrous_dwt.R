@@ -40,7 +40,6 @@
 #' "b3spline")`
 #'
 #' @examples
-#' \dontrun{
 #' N <- 1000 #  number of time series points
 #' J <- 4 # decomposition level
 #' wavelet <- 'coif1' # wavelet filter
@@ -49,7 +48,6 @@
 #' Xr <- as.matrix(rowSums(W)) # reconstruct time series
 #' mse_r <- mean( (X - Xr)^2) # confirm additive reconstruction
 #' plot.ts(W) # plot wavelet and scaling coefficients
-#' }
 #' @export
 atrous_dwt <- function(X,wavelet,decomp_level){
 

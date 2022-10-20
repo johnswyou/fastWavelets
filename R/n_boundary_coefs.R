@@ -35,11 +35,9 @@
 #' https://doi.org/10.1016/j.jhydrol.2018.05.003
 #'
 #' @examples
-#' \dontrun{
 #' J <- 4 # decomposition level
 #' wavelet <- 'b3spline' # wavelet filter
 #' nbc <- n_boundary_coefs(wavelet, J) # number of boundary-effected coefficients at decomp_level J
-#' }
 #' @export
 n_boundary_coefs <- function(wavelet, decomp_level){
 

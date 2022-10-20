@@ -30,13 +30,11 @@
 #' )`
 #'
 #' @examples
-#' \dontrun{
 #' N <- 1000 #  number of time series points
 #' J <- 4 # decomposition level
 #' wavelet <- 'coif1' # wavelet filter
 #' X <- matrix(rnorm(N),N,1)
 #' W <- mo_dwt(X,wavelet,J)
-#' }
 #' @export
 mo_dwt <- function(X,wavelet,decomp_level){
 
