@@ -26,7 +26,7 @@ X <- matrix(rnorm(N),N,1)
 W <- mo_dwt(X,wavelet,J)
 ```
 
-The set of possible value for the argument `wavelet` is as follows:
+The set of possible values for the argument `wavelet` is as follows:
 
 ```r
 c("haar", "d1", "sym1", "bior1.1", "rbio1.1",
