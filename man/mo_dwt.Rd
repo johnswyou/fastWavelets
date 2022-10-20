@@ -38,4 +38,7 @@ W <- mo_dwt(X,wavelet,J)
 \references{
 M. Basta (2014), Additive Decomposition and Boundary Conditions in Wavelet-Based
 Forecasting Approaches, Acta Oeconomica Pragensia, 2, pp. 48-70.
+
+Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
+University Press.
 }

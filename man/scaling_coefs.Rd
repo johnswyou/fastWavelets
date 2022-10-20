@@ -2,14 +2,14 @@
 % Please edit documentation in R/RcppExports.R
 \name{scaling_coefs}
 \alias{scaling_coefs}
-\title{Computes scaling coefficients}
+\title{Compute scaling coefficients}
 \usage{
 scaling_coefs(X, wavelet, j)
 }
 \arguments{
 \item{X}{A vector}
 
-\item{wavelet}{A character string indicating the wavelet filter desired}
+\item{wavelet}{A character string indicating the scaling filter desired}
 
 \item{j}{The decomposition level}
 }
@@ -17,5 +17,9 @@ scaling_coefs(X, wavelet, j)
 Matrix of scaling coefficients
 }
 \description{
-Computes scaling coefficients
+Compute scaling coefficients
+}
+\references{
+Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
+University Press.
 }

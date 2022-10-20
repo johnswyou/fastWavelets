@@ -2,16 +2,20 @@
 % Please edit documentation in R/RcppExports.R
 \name{scaling_filter}
 \alias{scaling_filter}
-\title{Computes the scaling filter}
+\title{Compute the scaling filter}
 \usage{
 scaling_filter(wavelet)
 }
 \arguments{
-\item{wavelet}{A character string indicating the wavelet filter desired}
+\item{wavelet}{A character string indicating the scaling filter desired}
 }
 \value{
 Scaling filter vector
 }
 \description{
-Computes the scaling filter
+Compute the scaling filter
+}
+\references{
+Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
+University Press.
 }

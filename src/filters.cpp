@@ -7,10 +7,13 @@ using namespace Rcpp;
 
 // [[Rcpp::plugins("cpp11")]]
 
-//' Computes the wavelet filter
+//' Compute the wavelet filter
 //'
 //' @param wavelet A character string indicating the wavelet filter desired
 //' @return Wavelet filter vector
+//' @references
+//' Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
+//' University Press.
 // [[Rcpp::export]]
 NumericVector wavelet_filter(String wavelet) {
 
@@ -27,10 +30,13 @@ NumericVector wavelet_filter(String wavelet) {
   return h;
 }
 
-//' Computes the scaling filter
+//' Compute the scaling filter
 //'
-//' @param wavelet A character string indicating the wavelet filter desired
+//' @param wavelet A character string indicating the scaling filter desired
 //' @return Scaling filter vector
+//' @references
+//' Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
+//' University Press.
 // [[Rcpp::export]]
 NumericVector scaling_filter(String wavelet)
 {

@@ -33,4 +33,9 @@ nbc <- n_boundary_coefs(wavelet, J) # number of boundary-effected coefficients a
 \references{
 M. Basta (2014),Additive Decomposition and Boundary Conditions in Wavelet-Based
 Forecasting Approaches, Acta Oeconomica Pragensia, 2, pp. 48-70.
+
+Quilty, J., & Adamowski, J. (2018). Addressing the incorrect usage of wavelet-based
+hydrological and water resources forecasting models for real-world applications with best
+practices and a new forecasting framework. Journal of Hydrology, 563, 336–353.
+https://doi.org/10.1016/j.jhydrol.2018.05.003
 }

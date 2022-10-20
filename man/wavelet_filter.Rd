@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppExports.R
 \name{wavelet_filter}
 \alias{wavelet_filter}
-\title{Computes the wavelet filter}
+\title{Compute the wavelet filter}
 \usage{
 wavelet_filter(wavelet)
 }
@@ -13,5 +13,9 @@ wavelet_filter(wavelet)
 Wavelet filter vector
 }
 \description{
-Computes the wavelet filter
+Compute the wavelet filter
+}
+\references{
+Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
+University Press.
 }

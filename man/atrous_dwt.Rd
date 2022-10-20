@@ -47,4 +47,7 @@ doi:10.1016/j.neucom.2006.04.005.
 Maheswaran, R., and R. Khosa (2012), Comparative study of different
 wavelets for hydrologic forecasting, Comput. Geosci.,
 doi:10.1016/j.cageo.2011.12.015.
+
+Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
+University Press.
 }
