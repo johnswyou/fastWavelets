@@ -1,4 +1,4 @@
-# fastWavelets
+# fastWavelets <img src="man/figures/logo.PNG" align="right" height="139" />
 
 Computes Maximal Overlap Discrete Wavelet Transform (MODWT) and A Trous DWT.
 
