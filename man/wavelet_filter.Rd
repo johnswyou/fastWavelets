@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppExports.R
 \name{wavelet_filter}
 \alias{wavelet_filter}
-\title{Compute the wavelet filter}
+\title{Compute the Wavelet Filter}
 \usage{
 wavelet_filter(wavelet)
 }
@@ -10,10 +10,10 @@ wavelet_filter(wavelet)
 \item{wavelet}{A character string indicating the wavelet filter desired}
 }
 \value{
-Wavelet filter vector
+Wavelet filter vector (a numeric vector)
 }
 \description{
-Compute the wavelet filter
+Compute the Wavelet Filter
 }
 \references{
 Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
