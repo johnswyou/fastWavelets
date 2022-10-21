@@ -1,6 +1,6 @@
 # fastWavelets <img src="man/figures/logo.PNG" align="right" height="139" />
 
-Computes Maximal Overlap Discrete Wavelet Transform (MODWT) and A Trous DWT.
+A lightweight R package for computing the Maximal Overlap Discrete Wavelet Transform (MODWT) and À Trous DWT. This package was originally developed to aid forecasting research in water resources (streamflow forecasting, urban water demand forecasting, etc.)
 
 ## Installation
 
@@ -57,16 +57,10 @@ c("haar", "d1", "sym1",
 
 ## References
 
-Quilty, J., &amp; Adamowski, J. (2018). Addressing the incorrect usage of wavelet-based hydrological and water resources forecasting models for real-world applications with best practices and a new forecasting framework. Journal of Hydrology, 563, 336–353. https://doi.org/10.1016/j.jhydrol.2018.05.003 
+Quilty, J., &amp; Adamowski, J. (2018). Addressing the incorrect usage of wavelet-based hydrological and water resources forecasting models for real-world applications with best practices and a new forecasting framework. Journal of Hydrology, 563, 336–353. https://doi.org/10.1016/j.jhydrol.2018.05.003
 
-M. Basta (2014), Additive Decomposition and Boundary Conditions in Wavelet-Based
-Forecasting Approaches, Acta Oeconomica Pragensia, 2, pp. 48-70.
+Bašta, M. (2014). Additive decomposition and boundary conditions in wavelet-based forecasting approaches. Acta Oeconomica Pragensia, 22(2), 48–70. https://doi.org/10.18267/j.aop.431 
 
-Benaouda, D., F. Murtagh, J. L. Starck, and O. Renaud (2006),
-Wavelet-based nonlinear multiscale decomposition model for
-electricity load forecasting, Neurocomputing,
-doi:10.1016/j.neucom.2006.04.005.
+Benaouda, D., Murtagh, F., Starck, J.-L., &amp; Renaud, O. (2006). Wavelet-based nonlinear multiscale decomposition model for electricity load forecasting. Neurocomputing, 70(1-3), 139–154. https://doi.org/10.1016/j.neucom.2006.04.005 
 
-Maheswaran, R., and R. Khosa (2012), Comparative study of different
-wavelets for hydrologic forecasting, Comput. Geosci.,
-doi:10.1016/j.cageo.2011.12.015.
+Maheswaran, R., &amp; Khosa, R. (2012). Comparative study of different wavelets for hydrologic forecasting. Computers &amp; Geosciences, 46, 284–295. https://doi.org/10.1016/j.cageo.2011.12.015 
