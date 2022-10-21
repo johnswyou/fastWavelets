@@ -16,11 +16,11 @@ using namespace Rcpp;
 // Main function
 // =============
 
-//' Compute scaling coefficients
+//' Compute Scaling Coefficients
 //'
-//' @param X A vector
+//' @param X A numeric vector
 //' @param wavelet A character string indicating the scaling filter desired
-//' @param j The decomposition level
+//' @param j The decomposition level \[integer\]
 //' @return Matrix of scaling coefficients
 //' @references
 //' Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
