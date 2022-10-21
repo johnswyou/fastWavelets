@@ -2,22 +2,22 @@
 % Please edit documentation in R/RcppExports.R
 \name{wavelet_coefs}
 \alias{wavelet_coefs}
-\title{Compute wavelet coefficients}
+\title{Compute Wavelet Coefficients}
 \usage{
 wavelet_coefs(X, wavelet, j)
 }
 \arguments{
-\item{X}{A vector}
+\item{X}{A numeric vector}
 
 \item{wavelet}{A character string indicating the scaling filter desired}
 
-\item{j}{The decomposition level}
+\item{j}{The decomposition level [integer]}
 }
 \value{
 Matrix of wavelet coefficients
 }
 \description{
-Compute wavelet coefficients
+Compute Wavelet Coefficients
 }
 \references{
 Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
