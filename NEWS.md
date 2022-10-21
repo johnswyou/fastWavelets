@@ -1,3 +1,3 @@
-# fastWavelets 0.0.0.9000
+# fastWavelets 1.0.0
 
-* Releasing version 0.0.0.9000 to CRAN!
+* Releasing new package fastWavelets version 1.0.0 to CRAN!
