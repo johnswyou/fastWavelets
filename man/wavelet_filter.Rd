@@ -13,7 +13,7 @@ wavelet_filter(wavelet)
 Wavelet filter vector (a numeric vector)
 }
 \description{
-Compute the Wavelet Filter
+Compute the wavelet filter.
 }
 \references{
 Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge

@@ -9,6 +9,8 @@ using namespace Rcpp;
 
 //' Compute the Wavelet Filter
 //'
+//' Compute the wavelet filter.
+//'
 //' @param wavelet A character string indicating the wavelet filter desired
 //' @return Wavelet filter vector (a numeric vector)
 //' @references
@@ -31,6 +33,8 @@ NumericVector wavelet_filter(String wavelet) {
 }
 
 //' Scaling Filter
+//'
+//' Compute the scaling filter.
 //'
 //' @param wavelet A character string indicating the scaling filter desired
 //' @return Scaling filter vector (a numeric vector)

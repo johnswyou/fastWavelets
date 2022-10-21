@@ -3,6 +3,8 @@
 
 #' Compute the Wavelet Filter
 #'
+#' Compute the wavelet filter.
+#'
 #' @param wavelet A character string indicating the wavelet filter desired
 #' @return Wavelet filter vector (a numeric vector)
 #' @references
@@ -13,6 +15,8 @@ wavelet_filter <- function(wavelet) {
 }
 
 #' Scaling Filter
+#'
+#' Compute the scaling filter.
 #'
 #' @param wavelet A character string indicating the scaling filter desired
 #' @return Scaling filter vector (a numeric vector)
@@ -40,6 +44,8 @@ scaling_filter <- function(wavelet) {
 
 #' Compute Scaling Coefficients
 #'
+#' Compute the scaling coefficients.
+#'
 #' @param X A numeric vector
 #' @param wavelet A character string indicating the scaling filter desired
 #' @param j The decomposition level \[integer\]
@@ -52,6 +58,8 @@ scaling_coefs <- function(X, wavelet, j) {
 }
 
 #' Compute Wavelet Coefficients
+#'
+#' Compute the wavelet coefficients.
 #'
 #' @param X A numeric vector
 #' @param wavelet A character string indicating the scaling filter desired

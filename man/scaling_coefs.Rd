@@ -17,7 +17,7 @@ scaling_coefs(X, wavelet, j)
 Matrix of scaling coefficients
 }
 \description{
-Compute Scaling Coefficients
+Compute the scaling coefficients.
 }
 \references{
 Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge

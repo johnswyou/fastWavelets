@@ -18,6 +18,8 @@ using namespace Rcpp;
 
 //' Compute Scaling Coefficients
 //'
+//' Compute the scaling coefficients.
+//'
 //' @param X A numeric vector
 //' @param wavelet A character string indicating the scaling filter desired
 //' @param j The decomposition level \[integer\]

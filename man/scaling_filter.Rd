@@ -13,7 +13,7 @@ scaling_filter(wavelet)
 Scaling filter vector (a numeric vector)
 }
 \description{
-Scaling Filter
+Compute the scaling filter.
 }
 \details{
 The argument \code{wavelet} can take one of the following values:

@@ -17,7 +17,7 @@ wavelet_coefs(X, wavelet, j)
 Matrix of wavelet coefficients
 }
 \description{
-Compute Wavelet Coefficients
+Compute the wavelet coefficients.
 }
 \references{
 Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
