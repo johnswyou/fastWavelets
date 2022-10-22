@@ -23,22 +23,39 @@ devtools::install_github("johnswyou/fastWavelets")
 
 ## Example
 
+Here we decompose a white noise series using MODWT:
+
 ``` r
 library(fastWavelets)
 
-N <- 1000                # number of time series points
-J <- 4                   # decomposition level
-wavelet <- 'coif1'       # scaling filter
-X <- matrix(rnorm(N),N,1)
+set.seed(839)                       # make this example reproducible
+
+N <- 1000                           # number of time series points
+J <- 4                              # decomposition level
+wavelet <- 'coif1'                  # scaling filter
+X <- matrix(rnorm(N),N,1)           # white noise
 modwt.X <- mo_dwt(X,wavelet,J)
 colnames(modwt.X) <- c(paste0("W", 1:J), paste0("V", J))
-nbc <- n_boundary_coefs(wavelet, J)
+nbc <- n_boundary_coefs(wavelet, J) # number of boundary affected coefficients
 
-plot.ts(modwt.X, nc=1, main="MODWT with coif1 scaling filter")
-abline(v=nbc)
+# Visualizations
+plot.ts(X, main = "White noise series", ylab="")
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
+
+``` r
+plot.ts(modwt.X, nc=1, main="MODWT coefficients")
+abline(v=nbc, lwd=2, col="blue", lty=2)
+```
+
+<img src="man/figures/README-example-2.png" width="100%" />
+
+In the context of forecasting, everything to the left of the vertical
+dashed blue line would be removed prior to training a forecasting model
+using the MODWT coefficients. It is often useful to view wavelet
+decomposition methods such as the MODWT as a “feature generation” or
+“feature engineering” method.
 
 ## Available scaling filters
 
