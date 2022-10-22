@@ -1,20 +1,28 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # fastWavelets <img src="man/figures/logo.PNG" align="right" height="139" />
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-A lightweight R package for computing the Maximal Overlap Discrete
-Wavelet Transform (MODWT) and À Trous DWT. This package was originally
-developed to aid forecasting research in water resources (streamflow
-forecasting, urban water demand forecasting, etc.)
+A lightweight R package for computing the Maximal Overlap Discrete Wavelet Transform (MODWT) and À Trous DWT. This package was originally developed to aid forecasting research in water resources (streamflow forecasting, urban water demand forecasting, etc.)
 
 ## Installation
 
-You can install the development version of fastWavelets from
-[GitHub](https://github.com/) with:
+You can install the development version of fastWavelets from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -23,7 +31,7 @@ devtools::install_github("johnswyou/fastWavelets")
 
 ## Example
 
-``` r
+```{r example}
 library(fastWavelets)
 
 N <- 1000                # number of time series points
@@ -38,14 +46,11 @@ plot.ts(modwt.X, nc=1, main="MODWT with coif1 scaling filter")
 abline(v=nbc)
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
-
 ## Available scaling filters
 
-For `atrous_dwt`, the set of possible values for the argument `wavelet`
-is as follows:
+For `atrous_dwt`, the set of possible values for the argument `wavelet` is as follows:
 
-``` r
+```r
 c("haar", "d1", "sym1", "bior1.1", "rbio1.1",
 "d2", "sym2", "d3", "sym3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "d11",
 "sym4", "sym5", "sym6", "sym7", "sym8", "sym9", "sym10",
@@ -62,7 +67,7 @@ c("haar", "d1", "sym1", "bior1.1", "rbio1.1",
 
 and for `mo_dwt`, the set of possible values for `wavelet` is
 
-``` r
+```r
 c("haar", "d1", "sym1",
 "d2", "sym2", "d3", "sym3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "d11",
 "sym4", "sym5", "sym6", "sym7", "sym8", "sym9", "sym10",
@@ -74,21 +79,10 @@ c("haar", "d1", "sym1",
 
 ## References
 
-Quilty, J., & Adamowski, J. (2018). Addressing the incorrect usage of
-wavelet-based hydrological and water resources forecasting models for
-real-world applications with best practices and a new forecasting
-framework. Journal of Hydrology, 563, 336–353.
-<https://doi.org/10.1016/j.jhydrol.2018.05.003>
+Quilty, J., &amp; Adamowski, J. (2018). Addressing the incorrect usage of wavelet-based hydrological and water resources forecasting models for real-world applications with best practices and a new forecasting framework. Journal of Hydrology, 563, 336–353. https://doi.org/10.1016/j.jhydrol.2018.05.003
 
-Bašta, M. (2014). Additive decomposition and boundary conditions in
-wavelet-based forecasting approaches. Acta Oeconomica Pragensia, 22(2),
-48–70. <https://doi.org/10.18267/j.aop.431>
+Bašta, M. (2014). Additive decomposition and boundary conditions in wavelet-based forecasting approaches. Acta Oeconomica Pragensia, 22(2), 48–70. https://doi.org/10.18267/j.aop.431 
 
-Benaouda, D., Murtagh, F., Starck, J.-L., & Renaud, O. (2006).
-Wavelet-based nonlinear multiscale decomposition model for electricity
-load forecasting. Neurocomputing, 70(1-3), 139–154.
-<https://doi.org/10.1016/j.neucom.2006.04.005>
+Benaouda, D., Murtagh, F., Starck, J.-L., &amp; Renaud, O. (2006). Wavelet-based nonlinear multiscale decomposition model for electricity load forecasting. Neurocomputing, 70(1-3), 139–154. https://doi.org/10.1016/j.neucom.2006.04.005 
 
-Maheswaran, R., & Khosa, R. (2012). Comparative study of different
-wavelets for hydrologic forecasting. Computers & Geosciences, 46,
-284–295. <https://doi.org/10.1016/j.cageo.2011.12.015>
+Maheswaran, R., &amp; Khosa, R. (2012). Comparative study of different wavelets for hydrologic forecasting. Computers &amp; Geosciences, 46, 284–295. https://doi.org/10.1016/j.cageo.2011.12.015 
