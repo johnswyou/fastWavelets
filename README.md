@@ -54,8 +54,8 @@ abline(v=nbc, lwd=2, col="blue", lty=2)
 In the context of forecasting, everything to the left of the vertical
 dashed blue line would be removed prior to training a forecasting model
 using the MODWT coefficients. It is often useful to view wavelet
-decomposition methods such as the MODWT as a “feature generation” or
-“feature engineering” method.
+decomposition methods such as the MODWT as “feature generation” or
+“feature engineering” methods.
 
 ## Available scaling filters
 
