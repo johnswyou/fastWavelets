@@ -13,7 +13,13 @@ forecasting, urban water demand forecasting, etc.)
 
 ## Installation
 
-You can install the development version of fastWavelets from
+You can install the latest version from CRAN using
+
+```r
+install.packages("fastWavelets")
+```
+
+You can also install the development version of fastWavelets from
 [GitHub](https://github.com/) with:
 
 ``` r
