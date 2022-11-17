@@ -612,10 +612,12 @@ NumericVector scaling_filter(String wavelet)
   // B-Splines
   else if (wavelet == "b3spline")
   {
-    g = {(1 / 16) * sqrt(2), (1 / 4) * sqrt(2), (3 / 8) * sqrt(2), (1 / 4) * sqrt(2), (1 / 16) * sqrt(2)};
+    //g = {(1 / 16) * sqrt(2), (1 / 4) * sqrt(2), (3 / 8) * sqrt(2), (1 / 4) * sqrt(2), (1 / 16) * sqrt(2)};
+    g = {0.08838835, 0.35355339, 0.53033009, 0.35355339, 0.08838835};
   }
 
   g = g / sqrt(2);
+  //g = g/1.414214;
 
   return g;
 }
