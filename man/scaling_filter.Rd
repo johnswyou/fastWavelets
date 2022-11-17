@@ -23,4 +23,19 @@ The argument \code{wavelet} can take one of the following values:
 \references{
 Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
 University Press.
+
+Wasilewski, F. (2008). Wavelet browser by pywavelets. Wavelet Properties Browser.
+Retrieved November 17, 2022, from http://wavelets.pybytes.com/
+
+Gregory R. Lee, Ralf Gommers, Filip Wasilewski, Kai Wohlfahrt, Aaron O’Leary (2019).
+PyWavelets: A Python package for wavelet analysis. Journal of Open Source Software,
+4(36), 1237, https://doi.org/10.21105/joss.01237.
+
+Olhede, S., & Walden, A. T. (2004). The Hilbert spectrum via wavelet projections.
+Proceedings of the Royal Society of London. Series A: Mathematical, Physical and
+Engineering Sciences, 460(2044), 955–975. https://doi.org/10.1098/rspa.2003.1199
+
+Maheswaran, R., & Khosa, R. (2012). Comparative study of different wavelets for
+hydrologic forecasting. Computers & Geosciences, 46, 284–295.
+https://doi.org/10.1016/j.cageo.2011.12.015
 }

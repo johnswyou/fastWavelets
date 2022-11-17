@@ -21,13 +21,14 @@ using namespace Rcpp;
 //'
 //' Compute the wavelet coefficients.
 //'
-//' @param X A numeric vector
-//' @param wavelet A character string indicating the scaling filter desired
+//' @param X An (N x 1) matrix or a vector
+//' @param wavelet A character string indicating the scaling filter
 //' @param j The decomposition level \[integer\]
-//' @return Matrix of wavelet coefficients
+//' @return (N x 1) matrix of wavelet coefficients
 //' @references
 //' Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
 //' University Press.
+//' @export
 // [[Rcpp::export]]
 NumericMatrix wavelet_coefs(NumericVector X, String wavelet, int j)
 {

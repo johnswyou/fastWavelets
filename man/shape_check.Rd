@@ -10,7 +10,7 @@ shape_check(X)
 \item{X}{Object to check and (if possible) coerce to a single column matrix}
 }
 \value{
-A single column matrix
+An (N x 1) matrix
 }
 \description{
 \code{shape_check} checks whether \code{X} is a matrix representing

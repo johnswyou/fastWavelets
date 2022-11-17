@@ -34,6 +34,9 @@
 #' practices and a new forecasting framework. Journal of Hydrology, 563, 336–353.
 #' https://doi.org/10.1016/j.jhydrol.2018.05.003
 #'
+#' Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
+#' University Press.
+#'
 #' @examples
 #' J <- 4 # decomposition level
 #' wavelet <- 'b3spline' # wavelet filter

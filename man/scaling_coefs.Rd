@@ -7,14 +7,14 @@
 scaling_coefs(X, wavelet, j)
 }
 \arguments{
-\item{X}{A numeric vector}
+\item{X}{An (N x 1) matrix or a vector}
 
-\item{wavelet}{A character string indicating the scaling filter desired}
+\item{wavelet}{A character string indicating the scaling filter}
 
 \item{j}{The decomposition level [integer]}
 }
 \value{
-Matrix of scaling coefficients
+An (N x 1) matrix scaling coefficients
 }
 \description{
 Compute the scaling coefficients.

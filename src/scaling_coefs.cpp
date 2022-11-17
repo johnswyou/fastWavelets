@@ -20,13 +20,14 @@ using namespace Rcpp;
 //'
 //' Compute the scaling coefficients.
 //'
-//' @param X A numeric vector
-//' @param wavelet A character string indicating the scaling filter desired
+//' @param X An (N x 1) matrix or a vector
+//' @param wavelet A character string indicating the scaling filter
 //' @param j The decomposition level \[integer\]
-//' @return Matrix of scaling coefficients
+//' @return An (N x 1) matrix scaling coefficients
 //' @references
 //' Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
 //' University Press.
+//' @export
 // [[Rcpp::export]]
 NumericMatrix scaling_coefs(NumericVector X, String wavelet, int j)
 {

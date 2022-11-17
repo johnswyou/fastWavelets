@@ -36,4 +36,7 @@ Quilty, J., & Adamowski, J. (2018). Addressing the incorrect usage of wavelet-ba
 hydrological and water resources forecasting models for real-world applications with best
 practices and a new forecasting framework. Journal of Hydrology, 563, 336–353.
 https://doi.org/10.1016/j.jhydrol.2018.05.003
+
+Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
+University Press.
 }

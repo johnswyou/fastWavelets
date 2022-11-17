@@ -4,9 +4,10 @@
 #' to coerce the user provided `X` to a matrix with 1 column. If this cannot be done,
 #' an error is raised.
 #' @param X Object to check and (if possible) coerce to a single column matrix
-#' @return A single column matrix
+#' @return An (N x 1) matrix
 #' @details This is a utility function written to check the input `X` for the
 #' functions `atrous_dwt` and `mo_dwt`.
+#' @export
 shape_check <- function(X) {
 
   if (is.vector(X)) {
