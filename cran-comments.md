@@ -6,5 +6,6 @@
 
 ## Resubmission
 
+* Fixed typo "decomposition" in DESCRIPTION.
 * Forgot to update documentation and README to incorporate the newly added wavelets; these
 updates have now been made.
