@@ -13,13 +13,7 @@ forecasting, urban water demand forecasting, etc.)
 
 ## Installation
 
-You can install the latest version from CRAN using
-
-```r
-install.packages("fastWavelets")
-```
-
-You can also install the development version of fastWavelets from
+You can install the development version of fastWavelets from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -60,8 +54,8 @@ abline(v=nbc, lwd=2, col="blue", lty=2)
 In the context of forecasting, everything to the left of the vertical
 dashed blue line would be removed prior to training a forecasting model
 using the MODWT coefficients. It is often useful to view wavelet
-decomposition methods such as the MODWT as “feature generation” or
-“feature engineering” methods.
+decomposition methods such as the MODWT as a “feature generation” or
+“feature engineering” method.
 
 ## Available scaling filters
 
@@ -80,7 +74,11 @@ c("haar", "d1", "sym1", "bior1.1", "rbio1.1",
 "la8", "la10", "la12", "la14", "la16", "la18", "la20",
 "bl14", "bl18", "bl20",
 "fk4", "fk6", "fk8", "fk14", "fk18", "fk22",
-"b3spline")
+"b3spline", 
+"mb4.2", "mb8.2", "mb8.3", "mb8.4", "mb10.3", "mb12.3", "mb14.3", "mb16.3", "mb18.3", "mb24.3", "mb32.3", 
+"beyl", 
+"vaid", 
+"han2.3", "han3.3", "han4.5", "han5.5")
 ```
 
 and for `mo_dwt`, the set of possible values for `wavelet` is
@@ -92,7 +90,11 @@ c("haar", "d1", "sym1",
 "coif1", "coif2", "coif3", "coif4", "coif5",
 "la8", "la10", "la12", "la14", "la16", "la18", "la20",
 "bl14", "bl18", "bl20",
-"fk4", "fk6", "fk8", "fk14", "fk18", "fk22")
+"fk4", "fk6", "fk8", "fk14", "fk18", "fk22",
+"mb4.2", "mb8.2", "mb8.3", "mb8.4", "mb10.3", "mb12.3", "mb14.3", "mb16.3", "mb18.3", "mb24.3", "mb32.3", 
+"beyl", 
+"vaid", 
+"han2.3", "han3.3", "han4.5", "han5.5")
 ```
 
 ## References

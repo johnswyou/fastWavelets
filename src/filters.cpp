@@ -52,7 +52,11 @@ NumericVector wavelet_filter(String wavelet) {
 //' "la8", "la10", "la12", "la14", "la16", "la18", "la20",
 //' "bl14", "bl18", "bl20",
 //' "fk4", "fk6", "fk8", "fk14", "fk18", "fk22",
-//' "b3spline")`
+//' "b3spline",
+//' "mb4.2", "mb8.2", "mb8.3", "mb8.4", "mb10.3", "mb12.3", "mb14.3", "mb16.3", "mb18.3", "mb24.3", "mb32.3",
+//' "beyl",
+//' "vaid",
+//' "han2.3", "han3.3", "han4.5", "han5.5")`
 //'
 //' @references
 //' Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
