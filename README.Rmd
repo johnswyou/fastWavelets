@@ -22,7 +22,13 @@ A lightweight R package for computing the Maximal Overlap Discrete Wavelet Trans
 
 ## Installation
 
-You can install the development version of fastWavelets from [GitHub](https://github.com/) with:
+You can install the latest version of fastWavelets with
+
+```r
+install.packages("fastWavelets")
+```
+
+You can also install the development version of fastWavelets from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
