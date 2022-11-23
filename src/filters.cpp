@@ -76,6 +76,19 @@ NumericVector wavelet_filter(String wavelet) {
 //' Maheswaran, R., &amp; Khosa, R. (2012). Comparative study of different wavelets for
 //' hydrologic forecasting. Computers &amp; Geosciences, 46, 284–295.
 //' https://doi.org/10.1016/j.cageo.2011.12.015
+//'
+//' Daubechies, Ingrid. Ten Lectures on Wavelets. Society for Industrial and Applied Mathematics, 1992.
+//'
+//' Morris, Joel M, and Ravindra Peravali. “Minimum-Bandwidth Discrete-Time Wavelets.” Signal Processing 76,
+//' no. 2 (July 1999): 181–93. https://doi.org/10.1016/S0165-1684(99)00007-9.
+//'
+//' Doroslovački, M.L. “On the Least Asymmetric Wavelets.” IEEE Transactions on Signal Processing 46,
+//' no. 4 (April 1998): 1125–30. https://doi.org/10.1109/78.668562.
+//'
+//' Han, Bin. “Wavelet Filter Banks.” In Framelets and Wavelets: Algorithms, Analysis, and Applications,
+//' 92–98. Applied and Numerical Harmonic Analysis. Cham, Switzerland: Birkhäuser, 2017.
+//' https://doi.org/10.1007/978-3-319-68530-4_2.
+//'
 //' @export
 // [[Rcpp::export]]
 NumericVector scaling_filter(String wavelet)
