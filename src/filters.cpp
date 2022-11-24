@@ -89,6 +89,12 @@ NumericVector wavelet_filter(String wavelet) {
 //' 92–98. Applied and Numerical Harmonic Analysis. Cham, Switzerland: Birkhäuser, 2017.
 //' https://doi.org/10.1007/978-3-319-68530-4_2.
 //'
+//' Vaidyanathan, P. P. & Hoang, P.-Q. Lattice structures for optimal design and robust implementation
+//' of two-channel perfect-reconstruction QMF banks. IEEE Trans. Acoust. 36, 81–94 (1988).
+//'
+//' Wickerhauser, M. V. Adapted Wavelet Analysis from Theory to Software.
+//' Adapted Wavelet Analysis from Theory to Software (A.K. Peters, 1994).
+//'
 //' @export
 // [[Rcpp::export]]
 NumericVector scaling_filter(String wavelet)
