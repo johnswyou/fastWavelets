@@ -42,6 +42,8 @@
 #' @export
 mo_dwt <- function(X,wavelet,decomp_level){
 
+  # ERROR CHECKING
+
   invalid_scaling_filters <- c("bior1.3", "bior1.5", "bior2.2", "bior2.4", "bior2.6", "bior2.8", "bior3.1", "bior3.3",
                               "bior3.5", "bior3.7", "bior3.9", "bior4.4", "bior5.5", "bior6.8",
                               "rbio1.3", "rbio1.5", "rbio2.2", "rbio2.4", "rbio2.6", "rbio2.8", "rbio3.1", "rbio3.3",
@@ -58,6 +60,14 @@ mo_dwt <- function(X,wavelet,decomp_level){
   # g = scaling_filter(wavelet)
   # L = length(g)
   J = decomp_level
+
+  # Check maximum decomposition level J
+  # L <- length(scaling_filter(wavelet))
+  # if (J > log(((N-1)/(L-1)) +1)) {
+  #   stop("Decomposition level J is too large!")
+  # }
+
+  # MAIN CODE LOGIC
 
   # use periodic extension on time series in order to calculate wavelet and scaling
   # coefficients at boundary of time series, i.e., the first ((2^J) - 1) * (L - 1) + 1

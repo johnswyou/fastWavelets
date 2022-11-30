@@ -37,8 +37,15 @@ NumericMatrix wavelet_coefs(NumericVector X, String wavelet, int j)
     NumericVector h = wavelet_filter(wavelet);
     int L = h.size();
 
-    //' convolve time series with scaling filter to calculate scaling coefficients
-    //' at this particular decomposition level
+    // ERROR CHECKING
+
+    // Check maximum decomposition level J
+    if (j > log(((N-1)/(L-1)) +1)/log(2)) {
+      stop("Decomposition level J is too large!");
+    }
+
+    // convolve time series with scaling filter to calculate scaling coefficients
+    // at this particular decomposition level
 
     // preallocae space
     NumericMatrix d(N, 1);
@@ -53,8 +60,8 @@ NumericMatrix wavelet_coefs(NumericVector X, String wavelet, int j)
 
             pos = k - pow(2, j - 1) * (i - 1); // time position
 
-            //' catch cases where time position <= 0 and wrap the position based
-            //' on the circularity assumption (i.e., mod(t,N) = t)
+            // catch cases where time position <= 0 and wrap the position based
+            // on the circularity assumption (i.e., mod(t,N) = t)
 
             if (pos <= 0)
             {
