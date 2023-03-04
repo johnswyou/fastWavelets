@@ -1,109 +1,38 @@
-#' Maximal Overlap Discrete Wavelet Transform (MODWT)
-#'
-#' This function calculates the wavelet and scaling coefficients of the
-#' MODWT.
-#'
+#' @title Maximal Overlap Discrete Wavelet Transform (MODWT)
 #' @param X An (N x 1) matrix or a vector
-#' @param wavelet Scaling filter name (see Details below) (string)
-#' @param decomp_level Decomposition level (integer, 1 < decomp_level < N/2)
-#' @return Wavelet and scaling coefficients (N x J+1)
-#' (wavelet coefficients in first J columns of returned matrix)
+#' @param filter Filter name (see Details below) (string)
+#' @param J Decomposition level (integer, 1 < J < N/2)
+#' @param remove_boundary_coefs Remove boundary affected coefficients?
+#' @details
+#' The argument `filter` can take one of the following values:
+#'
+#' c('bl7', 'bl9', 'bl10',
+#' 'beyl',
+#' 'coif1', 'coif2', 'coif3', 'coif4', 'coif5',
+#' 'db1', 'db2', 'db3', 'db4', 'db5', 'db6', 'db7', 'db8', 'db9', 'db10', 'db11', 'db12',
+#' 'db13', 'db14', 'db15', 'db16', 'db17', 'db18', 'db19', 'db20', 'db21', 'db22', 'db23',
+#' 'db24', 'db25', 'db26', 'db27', 'db28', 'db29', 'db30', 'db31', 'db32', 'db33',
+#' 'db34', 'db35', 'db36', 'db37', 'db38', 'db39', 'db40', 'db41', 'db42', 'db43', 'db44', 'db45',
+#' 'fk4', 'fk6', 'fk8', 'fk14', 'fk18', 'fk22',
+#' 'han2_3', 'han3_3', 'han4_5', 'han5_5',
+#' 'dmey',
+#' 'mb4_2', 'mb8_2', 'mb8_3', 'mb8_4', 'mb10_3', 'mb12_3', 'mb14_3', 'mb16_3', 'mb18_3', 'mb24_3', 'mb32_3',
+#' 'sym2', 'sym3', 'sym4', 'sym5', 'sym6', 'sym7', 'sym8', 'sym9', 'sym10', 'sym11', 'sym12', 'sym13', 'sym14',
+#' 'sym15', 'sym16', 'sym17', 'sym18', 'sym19', 'sym20', 'sym21', 'sym22', 'sym23', 'sym24', 'sym25', 'sym26', 'sym27',
+#' 'sym28', 'sym29', 'sym30', 'sym31', 'sym32', 'sym33', 'sym34', 'sym35', 'sym36', 'sym37', 'sym38', 'sym39', 'sym40',
+#' 'sym41', 'sym42', 'sym43', 'sym44', 'sym45',
+#' 'vaid',
+#' 'la8', 'la10', 'la12', 'la14', 'la16', 'la18', 'la20')
 #' @references
-#'
-#' M. Basta (2014), Additive Decomposition and Boundary Conditions in Wavelet-Based
-#' Forecasting Approaches, Acta Oeconomica Pragensia, 2, pp. 48-70.
-#'
 #' Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
 #' University Press.
-#'
-#' @details
-#'
-#' The argument `wavelet` can take one of the following values:
-#'
-#' `c("haar", "d1", "sym1",
-#' "d2", "sym2", "d3", "sym3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "d11",
-#' "sym4", "sym5", "sym6", "sym7", "sym8", "sym9", "sym10",
-#' "coif1", "coif2", "coif3", "coif4", "coif5",
-#' "la8", "la10", "la12", "la14", "la16", "la18", "la20",
-#' "bl14", "bl18", "bl20",
-#' "fk4", "fk6", "fk8", "fk14", "fk18", "fk22",
-#' "mb4.2", "mb8.2", "mb8.3", "mb8.4", "mb10.3", "mb12.3", "mb14.3", "mb16.3", "mb18.3", "mb24.3", "mb32.3",
-#' "beyl",
-#' "vaid",
-#' "han2.3", "han3.3", "han4.5", "han5.5"
-#' )`
-#'
-#' @examples
-#' N <- 1000 #  number of time series points
-#' J <- 4 # decomposition level
-#' wavelet <- 'coif1' # wavelet filter
-#' X <- matrix(rnorm(N),N,1)
-#' W <- mo_dwt(X,wavelet,J)
 #' @export
-mo_dwt <- function(X,wavelet,decomp_level){
-
-  # ERROR CHECKING
-
-  invalid_scaling_filters <- c("bior1.3", "bior1.5", "bior2.2", "bior2.4", "bior2.6", "bior2.8", "bior3.1", "bior3.3",
-                              "bior3.5", "bior3.7", "bior3.9", "bior4.4", "bior5.5", "bior6.8",
-                              "rbio1.3", "rbio1.5", "rbio2.2", "rbio2.4", "rbio2.6", "rbio2.8", "rbio3.1", "rbio3.3",
-                              "rbio3.5", "rbio3.7", "rbio3.9", "rbio4.4", "rbio5.5", "rbio6.8",
-                              "bior1.1", "rbio1.1", "b3spline")
-
-  if (wavelet %in% invalid_scaling_filters) {
-    stop(paste0(wavelet, " cannot be used with mo_dwt"))
+mo_dwt <- function(X, filter, J, remove_boundary_coefs=FALSE) {
+  modwt_matrix <- modwt(X, filter, J)
+  if (remove_boundary_coefs) {
+    L <- length(scaling_filter(filter)) # could have used wavelet_filter
+    num_boundary_coefs <- ((2^J)-1)*(L-1) # length of longest equivalent wavelet/scaling filter for minus 1
+    modwt_matrix <- utils::tail(modwt_matrix, -num_boundary_coefs)
   }
-
-  X <- shape_check(X)
-
-  N = length(X)
-  # g = scaling_filter(wavelet)
-  # L = length(g)
-  J = decomp_level
-
-  # Check maximum decomposition level J
-  # L <- length(scaling_filter(wavelet))
-  # if (J > log(((N-1)/(L-1)) +1)) {
-  #   stop("Decomposition level J is too large!")
-  # }
-
-  # MAIN CODE LOGIC
-
-  # use periodic extension on time series in order to calculate wavelet and scaling
-  # coefficients at boundary of time series, i.e., the first ((2^J) - 1) * (L - 1) + 1
-  # time series observations
-  x = rbind(X,X) # periodic extension
-  rm(X)
-
-  # perform AT algorithm on extended time series
-
-  # preallocate space
-  v = matrix(0,2*N,J)
-  w = matrix(0,2*N,J)
-
-  for(j in seq(1,J)){
-
-    # calculate scaling coefficients
-
-    v[,j] = scaling_coefs(x,wavelet,j) # Eq. 14 in Basta [2014]
-
-    # calculate wavelet coefficients
-
-    w[,j] = wavelet_coefs(x,wavelet,j) # Eq. 13 in Basta [2014]
-
-    # scaling coefficients of previous step are used for calculating scaling
-    # and wavelet in next step
-
-    x = v[,j]
-
-  }
-
-  # combine wavelet and scaling coefficients in a single matrix and only store the
-  # last N observations
-
-  W = cbind(w[seq(N+1,2*N),], v[seq(N+1,2*N),J])
-
-  # mo_dwt <- W
-  return(W)
-
+  return(modwt_matrix)
 }

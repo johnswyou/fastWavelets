@@ -2,23 +2,20 @@
 % Please edit documentation in R/RcppExports.R
 \name{scaling_filter}
 \alias{scaling_filter}
-\title{Scaling Filter}
+\title{Maximal Overlap Discrete Wavelet Transform Scaling Filter}
 \usage{
-scaling_filter(wavelet)
+scaling_filter(filter)
 }
 \arguments{
-\item{wavelet}{A character string indicating the scaling filter desired}
+\item{filter}{A character string indicating the scaling filter desired}
 }
 \value{
 Scaling filter vector (a numeric vector)
 }
 \description{
-Compute the scaling filter.
-}
-\details{
-The argument \code{wavelet} can take one of the following values:
-
-\code{c("haar", "d1", "sym1", "bior1.1", "rbio1.1", "d2", "sym2", "d3", "sym3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "d11", "sym4", "sym5", "sym6", "sym7", "sym8", "sym9", "sym10", "coif1", "coif2", "coif3", "coif4", "coif5", "bior1.3", "bior1.5", "bior2.2", "bior2.4", "bior2.6", "bior2.8", "bior3.1", "bior3.3", "bior3.5", "bior3.7", "bior3.9", "bior4.4", "bior5.5", "bior6.8", "rbio1.3", "rbio1.5", "rbio2.2", "rbio2.4", "rbio2.6", "rbio2.8", "rbio3.1", "rbio3.3", "rbio3.5", "rbio3.7", "rbio3.9", "rbio4.4", "rbio5.5", "rbio6.8", "la8", "la10", "la12", "la14", "la16", "la18", "la20", "bl14", "bl18", "bl20", "fk4", "fk6", "fk8", "fk14", "fk18", "fk22", "b3spline", "mb4.2", "mb8.2", "mb8.3", "mb8.4", "mb10.3", "mb12.3", "mb14.3", "mb16.3", "mb18.3", "mb24.3", "mb32.3", "beyl", "vaid", "han2.3", "han3.3", "han4.5", "han5.5")}
+Compute the MODWT scaling filter, which is just the regular wavelet
+filter, divided by \code{sqrt(2)}. This function is used for the pyramid algorithm
+used in \code{modwt}.
 }
 \references{
 Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
@@ -57,3 +54,4 @@ of two-channel perfect-reconstruction QMF banks. IEEE Trans. Acoust. 36, 81–94
 Wickerhauser, M. V. Adapted Wavelet Analysis from Theory to Software.
 Adapted Wavelet Analysis from Theory to Software (A.K. Peters, 1994).
 }
+\keyword{internal}

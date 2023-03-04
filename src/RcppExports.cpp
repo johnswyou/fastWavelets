@@ -11,50 +11,63 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // wavelet_filter
-NumericVector wavelet_filter(String wavelet);
-RcppExport SEXP _fastWavelets_wavelet_filter(SEXP waveletSEXP) {
+NumericVector wavelet_filter(String filter);
+RcppExport SEXP _fastWavelets_wavelet_filter(SEXP filterSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< String >::type wavelet(waveletSEXP);
-    rcpp_result_gen = Rcpp::wrap(wavelet_filter(wavelet));
+    Rcpp::traits::input_parameter< String >::type filter(filterSEXP);
+    rcpp_result_gen = Rcpp::wrap(wavelet_filter(filter));
     return rcpp_result_gen;
 END_RCPP
 }
 // scaling_filter
-NumericVector scaling_filter(String wavelet);
-RcppExport SEXP _fastWavelets_scaling_filter(SEXP waveletSEXP) {
+NumericVector scaling_filter(String filter);
+RcppExport SEXP _fastWavelets_scaling_filter(SEXP filterSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< String >::type wavelet(waveletSEXP);
-    rcpp_result_gen = Rcpp::wrap(scaling_filter(wavelet));
+    Rcpp::traits::input_parameter< String >::type filter(filterSEXP);
+    rcpp_result_gen = Rcpp::wrap(scaling_filter(filter));
+    return rcpp_result_gen;
+END_RCPP
+}
+// modwt
+NumericMatrix modwt(NumericVector X, String filter, int J);
+RcppExport SEXP _fastWavelets_modwt(SEXP XSEXP, SEXP filterSEXP, SEXP JSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type X(XSEXP);
+    Rcpp::traits::input_parameter< String >::type filter(filterSEXP);
+    Rcpp::traits::input_parameter< int >::type J(JSEXP);
+    rcpp_result_gen = Rcpp::wrap(modwt(X, filter, J));
     return rcpp_result_gen;
 END_RCPP
 }
 // scaling_coefs
-NumericMatrix scaling_coefs(NumericVector X, String wavelet, int j);
-RcppExport SEXP _fastWavelets_scaling_coefs(SEXP XSEXP, SEXP waveletSEXP, SEXP jSEXP) {
+NumericMatrix scaling_coefs(NumericVector X, String filter, int j);
+RcppExport SEXP _fastWavelets_scaling_coefs(SEXP XSEXP, SEXP filterSEXP, SEXP jSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type X(XSEXP);
-    Rcpp::traits::input_parameter< String >::type wavelet(waveletSEXP);
+    Rcpp::traits::input_parameter< String >::type filter(filterSEXP);
     Rcpp::traits::input_parameter< int >::type j(jSEXP);
-    rcpp_result_gen = Rcpp::wrap(scaling_coefs(X, wavelet, j));
+    rcpp_result_gen = Rcpp::wrap(scaling_coefs(X, filter, j));
     return rcpp_result_gen;
 END_RCPP
 }
 // wavelet_coefs
-NumericMatrix wavelet_coefs(NumericVector X, String wavelet, int j);
-RcppExport SEXP _fastWavelets_wavelet_coefs(SEXP XSEXP, SEXP waveletSEXP, SEXP jSEXP) {
+NumericMatrix wavelet_coefs(NumericVector X, String filter, int j);
+RcppExport SEXP _fastWavelets_wavelet_coefs(SEXP XSEXP, SEXP filterSEXP, SEXP jSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type X(XSEXP);
-    Rcpp::traits::input_parameter< String >::type wavelet(waveletSEXP);
+    Rcpp::traits::input_parameter< String >::type filter(filterSEXP);
     Rcpp::traits::input_parameter< int >::type j(jSEXP);
-    rcpp_result_gen = Rcpp::wrap(wavelet_coefs(X, wavelet, j));
+    rcpp_result_gen = Rcpp::wrap(wavelet_coefs(X, filter, j));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -62,6 +75,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_fastWavelets_wavelet_filter", (DL_FUNC) &_fastWavelets_wavelet_filter, 1},
     {"_fastWavelets_scaling_filter", (DL_FUNC) &_fastWavelets_scaling_filter, 1},
+    {"_fastWavelets_modwt", (DL_FUNC) &_fastWavelets_modwt, 3},
     {"_fastWavelets_scaling_coefs", (DL_FUNC) &_fastWavelets_scaling_coefs, 3},
     {"_fastWavelets_wavelet_coefs", (DL_FUNC) &_fastWavelets_wavelet_coefs, 3},
     {NULL, NULL, 0}

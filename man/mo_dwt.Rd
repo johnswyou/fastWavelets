@@ -4,39 +4,42 @@
 \alias{mo_dwt}
 \title{Maximal Overlap Discrete Wavelet Transform (MODWT)}
 \usage{
-mo_dwt(X, wavelet, decomp_level)
+mo_dwt(X, filter, J, remove_boundary_coefs = FALSE)
 }
 \arguments{
 \item{X}{An (N x 1) matrix or a vector}
 
-\item{wavelet}{Scaling filter name (see Details below) (string)}
+\item{filter}{Filter name (see Details below) (string)}
 
-\item{decomp_level}{Decomposition level (integer, 1 < decomp_level < N/2)}
-}
-\value{
-Wavelet and scaling coefficients (N x J+1)
-(wavelet coefficients in first J columns of returned matrix)
+\item{J}{Decomposition level (integer, 1 < J < N/2)}
+
+\item{remove_boundary_coefs}{Remove boundary affected coefficients?}
 }
 \description{
-This function calculates the wavelet and scaling coefficients of the
-MODWT.
+Maximal Overlap Discrete Wavelet Transform (MODWT)
 }
 \details{
-The argument \code{wavelet} can take one of the following values:
+The argument \code{filter} can take one of the following values:
 
-\code{c("haar", "d1", "sym1", "d2", "sym2", "d3", "sym3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "d11", "sym4", "sym5", "sym6", "sym7", "sym8", "sym9", "sym10", "coif1", "coif2", "coif3", "coif4", "coif5", "la8", "la10", "la12", "la14", "la16", "la18", "la20", "bl14", "bl18", "bl20", "fk4", "fk6", "fk8", "fk14", "fk18", "fk22", "mb4.2", "mb8.2", "mb8.3", "mb8.4", "mb10.3", "mb12.3", "mb14.3", "mb16.3", "mb18.3", "mb24.3", "mb32.3", "beyl", "vaid", "han2.3", "han3.3", "han4.5", "han5.5" )}
-}
-\examples{
-N <- 1000 #  number of time series points
-J <- 4 # decomposition level
-wavelet <- 'coif1' # wavelet filter
-X <- matrix(rnorm(N),N,1)
-W <- mo_dwt(X,wavelet,J)
+c('bl7', 'bl9', 'bl10',
+'beyl',
+'coif1', 'coif2', 'coif3', 'coif4', 'coif5',
+'db1', 'db2', 'db3', 'db4', 'db5', 'db6', 'db7', 'db8', 'db9', 'db10', 'db11', 'db12',
+'db13', 'db14', 'db15', 'db16', 'db17', 'db18', 'db19', 'db20', 'db21', 'db22', 'db23',
+'db24', 'db25', 'db26', 'db27', 'db28', 'db29', 'db30', 'db31', 'db32', 'db33',
+'db34', 'db35', 'db36', 'db37', 'db38', 'db39', 'db40', 'db41', 'db42', 'db43', 'db44', 'db45',
+'fk4', 'fk6', 'fk8', 'fk14', 'fk18', 'fk22',
+'han2_3', 'han3_3', 'han4_5', 'han5_5',
+'dmey',
+'mb4_2', 'mb8_2', 'mb8_3', 'mb8_4', 'mb10_3', 'mb12_3', 'mb14_3', 'mb16_3', 'mb18_3', 'mb24_3', 'mb32_3',
+'sym2', 'sym3', 'sym4', 'sym5', 'sym6', 'sym7', 'sym8', 'sym9', 'sym10', 'sym11', 'sym12', 'sym13', 'sym14',
+'sym15', 'sym16', 'sym17', 'sym18', 'sym19', 'sym20', 'sym21', 'sym22', 'sym23', 'sym24', 'sym25', 'sym26', 'sym27',
+'sym28', 'sym29', 'sym30', 'sym31', 'sym32', 'sym33', 'sym34', 'sym35', 'sym36', 'sym37', 'sym38', 'sym39', 'sym40',
+'sym41', 'sym42', 'sym43', 'sym44', 'sym45',
+'vaid',
+'la8', 'la10', 'la12', 'la14', 'la16', 'la18', 'la20')
 }
 \references{
-M. Basta (2014), Additive Decomposition and Boundary Conditions in Wavelet-Based
-Forecasting Approaches, Acta Oeconomica Pragensia, 2, pp. 48-70.
-
 Percival, D. B. and A. T. Walden (2000) Wavelet Methods for Time Series Analysis, Cambridge
 University Press.
 }

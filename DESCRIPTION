@@ -1,6 +1,6 @@
 Package: fastWavelets
 Title: Compute Maximal Overlap Discrete Wavelet Transform (MODWT) and À Trous Discrete Wavelet Transform
-Version: 1.0.1.9000
+Version: 2.0.0.9000
 Authors@R: c(
     person("John", "Quilty", , "jquilty@uwaterloo.ca", role = c("aut"), comment = c(ORCID = "0000-0002-0207-8077")),
     person("John", "You", , "johnswyou@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-3509-0312")))
@@ -12,10 +12,12 @@ Description: A lightweight package to compute Maximal Overlap Discrete Wavelet
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.2
+RoxygenNote: 7.2.3
 LinkingTo:
     Rcpp
 Imports:
     Rcpp
 URL: https://github.com/johnswyou/fastWavelets
 BugReports: https://github.com/johnswyou/fastWavelets/issues
+Depends: 
+    R (>= 2.10)

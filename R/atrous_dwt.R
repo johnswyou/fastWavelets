@@ -4,8 +4,9 @@
 #' version of the Discrete Wavelet Transform (DWT).
 #'
 #' @param X An (N x 1) matrix or a vector
-#' @param wavelet Scaling filter name (see Details below) (string)
-#' @param decomp_level Decomposition level (integer, 1 < decomp_level < N/2)
+#' @param filter Filter name (see Details below) (string)
+#' @param J Decomposition level (integer, 1 < J < N/2)
+#' @param remove_boundary_coefs Remove boundary affected coefficients?
 #' @return Wavelet and scaling coefficients (N x J+1)
 #' (wavelet coefficients in first J columns of returned matrix)
 #' @references
@@ -20,43 +21,40 @@
 #' doi:10.1016/j.cageo.2011.12.015.
 #'
 #' @details
+#' The argument `filter` can take one of the following values:
 #'
-#' The argument `wavelet` can take one of the following values:
-#'
-#' `c("haar", "d1", "sym1", "bior1.1", "rbio1.1",
-#' "d2", "sym2", "d3", "sym3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "d11",
-#' "sym4", "sym5", "sym6", "sym7", "sym8", "sym9", "sym10",
-#' "coif1", "coif2", "coif3", "coif4", "coif5",
-#' "bior1.3", "bior1.5", "bior2.2", "bior2.4", "bior2.6", "bior2.8", "bior3.1", "bior3.3",
-#' "bior3.5", "bior3.7", "bior3.9", "bior4.4", "bior5.5", "bior6.8",
-#' "rbio1.3", "rbio1.5", "rbio2.2", "rbio2.4", "rbio2.6", "rbio2.8", "rbio3.1", "rbio3.3",
-#' "rbio3.5", "rbio3.7", "rbio3.9", "rbio4.4", "rbio5.5", "rbio6.8",
-#' "la8", "la10", "la12", "la14", "la16", "la18", "la20",
-#' "bl14", "bl18", "bl20",
-#' "fk4", "fk6", "fk8", "fk14", "fk18", "fk22",
-#' "b3spline", "mb4.2", "mb8.2", "mb8.3", "mb8.4", "mb10.3", "mb12.3", "mb14.3", "mb16.3", "mb18.3", "mb24.3", "mb32.3",
-#' "beyl",
-#' "vaid",
-#' "han2.3", "han3.3", "han4.5", "han5.5")`
-#'
+#' c('bl7', 'bl9', 'bl10',
+#' 'beyl',
+#' 'coif1', 'coif2', 'coif3', 'coif4', 'coif5',
+#' 'db1', 'db2', 'db3', 'db4', 'db5', 'db6', 'db7', 'db8', 'db9', 'db10', 'db11', 'db12',
+#' 'db13', 'db14', 'db15', 'db16', 'db17', 'db18', 'db19', 'db20', 'db21', 'db22', 'db23',
+#' 'db24', 'db25', 'db26', 'db27', 'db28', 'db29', 'db30', 'db31', 'db32', 'db33',
+#' 'db34', 'db35', 'db36', 'db37', 'db38', 'db39', 'db40', 'db41', 'db42', 'db43', 'db44', 'db45',
+#' 'fk4', 'fk6', 'fk8', 'fk14', 'fk18', 'fk22',
+#' 'han2_3', 'han3_3', 'han4_5', 'han5_5',
+#' 'dmey',
+#' 'mb4_2', 'mb8_2', 'mb8_3', 'mb8_4', 'mb10_3', 'mb12_3', 'mb14_3', 'mb16_3', 'mb18_3', 'mb24_3', 'mb32_3',
+#' 'sym2', 'sym3', 'sym4', 'sym5', 'sym6', 'sym7', 'sym8', 'sym9', 'sym10', 'sym11', 'sym12', 'sym13', 'sym14',
+#' 'sym15', 'sym16', 'sym17', 'sym18', 'sym19', 'sym20', 'sym21', 'sym22', 'sym23', 'sym24', 'sym25', 'sym26', 'sym27',
+#' 'sym28', 'sym29', 'sym30', 'sym31', 'sym32', 'sym33', 'sym34', 'sym35', 'sym36', 'sym37', 'sym38', 'sym39', 'sym40',
+#' 'sym41', 'sym42', 'sym43', 'sym44', 'sym45',
+#' 'vaid',
+#' 'la8', 'la10', 'la12', 'la14', 'la16', 'la18', 'la20')
 #' @examples
 #' N <- 1000 #  number of time series points
 #' J <- 4 # decomposition level
-#' wavelet <- 'coif1' # wavelet filter
 #' X <- matrix(rnorm(N),N,1)
-#' W <- atrous_dwt(X,wavelet,J)
-#' Xr <- as.matrix(rowSums(W)) # reconstruct time series
-#' mse_r <- mean( (X - Xr)^2) # confirm additive reconstruction
+#' W <- atrous_dwt(X,'coif1',J)
 #' plot.ts(W) # plot wavelet and scaling coefficients
 #' @export
-atrous_dwt <- function(X,wavelet,decomp_level){
+atrous_dwt <- function(X,filter,J,remove_boundary_coefs=FALSE){
 
   X <- shape_check(X)
 
   N = length(X)
-  # g = scaling_filter(wavelet)
+  # g = scaling_filter(filter)
   # L = length(g)
-  J = decomp_level
+  # J = decomp_level
 
   # use periodic extension on time series in order to calculate wavelet and scaling
   # coefficients at boundary of time series, i.e., the first ((2^J) - 1) * (L - 1) + 1
@@ -74,7 +72,7 @@ atrous_dwt <- function(X,wavelet,decomp_level){
 
     # calculate scaling coefficients
 
-    v[,j] = scaling_coefs(x,wavelet,j) # modified version of Eq. 5 in Maheswaran and Khosa [2012]
+    v[,j] = scaling_coefs(x,filter,j) # modified version of Eq. 5 in Maheswaran and Khosa [2012]
 
     # calculate wavelet coefficients
 
@@ -90,6 +88,12 @@ atrous_dwt <- function(X,wavelet,decomp_level){
   # last N observations
 
   W = cbind(w[seq(N+1,2*N),], v[seq(N+1,2*N),J])
+
+  if (remove_boundary_coefs) {
+    L <- length(scaling_filter(filter)) # could have used wavelet_filter
+    num_boundary_coefs <- ((2^J)-1)*(L-1) # length of longest equivalent wavelet/scaling filter for minus 1
+    W <- utils::tail(W, -num_boundary_coefs)
+  }
 
   # atrous_dwt <- W
   return(W)

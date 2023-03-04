@@ -4,7 +4,7 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-NumericVector wavelet_filter(String wavelet);
-NumericVector scaling_filter(String wavelet);
+NumericVector wavelet_filter(String filter);
+NumericVector scaling_filter(String filter);
 
 #endif

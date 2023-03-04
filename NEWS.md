@@ -9,4 +9,7 @@
 * Now exporting all functions that were previously hidden.
 * Added 4 new wavelet families: Morris Minimum Bandwidth, Beylkin, Vaidyanathan, Han Linear Phase Moments.
 
-# fastWavelets 1.0.2
+# fastWavelets 2.0.0
+
+* Revised the package for robustness and better user experience.
+* Backwards compatibility not guaranteed.
