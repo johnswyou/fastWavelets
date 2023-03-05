@@ -69,6 +69,8 @@ r_scaling_filter <- function(filter, modwt=FALSE) {
     out <- out / sqrt(2)
   }
 
+  out <- as.vector(out)
+
   return(out)
 }
 
@@ -142,6 +144,8 @@ r_wavelet_filter <- function(filter, modwt=FALSE) {
   if (modwt) {
     out <- out / sqrt(2)
   }
+
+  out <- as.vector(out)
 
   return(out)
 }
